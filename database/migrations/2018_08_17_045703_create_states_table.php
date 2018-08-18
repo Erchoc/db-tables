@@ -15,7 +15,8 @@ class CreateStatesTable extends Migration
     {
         Schema::create('states', function (Blueprint $table) {
             $table->increments('id');
-            $table->timestamps();
+            $table->string('code')->unique()->comment('唯一编号');
+            $table->string('name')->comment('国家名');
         });
     }
 

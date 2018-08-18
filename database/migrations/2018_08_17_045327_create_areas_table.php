@@ -15,10 +15,10 @@ class CreateAreasTable extends Migration
     {
         Schema::create('areas', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('code')->unique();
-            $table->string('name');
-            $table->string('parentId');
-            $table->string('level');
+            $table->string('code')->unique()->comment('唯一编号');
+            $table->string('name')->comment('城市名');
+            $table->string('parentId')->comment('父级ID');
+            $table->string('level')->comment('1省2市3县');
         });
     }
 

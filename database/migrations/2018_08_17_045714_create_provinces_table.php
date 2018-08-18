@@ -15,10 +15,9 @@ class CreateProvincesTable extends Migration
     {
         Schema::create('provinces', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('code');
-            $table->string('name');
-            $table->string('statecode');
-            $table->timestamps();
+            $table->string('code')->unique()->comment('唯一编号');
+            $table->string('name')->comment('省份名');
+            $table->string('statecode')->comment('所属国家');
         });
     }
 

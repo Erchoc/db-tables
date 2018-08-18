@@ -15,10 +15,9 @@ class CreateTownsTable extends Migration
     {
         Schema::create('towns', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('code');
-            $table->string('name');
-            $table->string('countrycode');
-            $table->timestamps();
+            $table->string('code')->unique()->comment('唯一编号');
+            $table->string('name')->comment('乡镇名');
+            $table->string('countrycode')->comment('所属县城');
         });
     }
 
